@@ -70,6 +70,7 @@
 <script src="../../common/js/jquery.js"></script>
 <script>
   $(function(){
+    //$(function(){...})は記述する事により、htmlを一度全て読み込んでからJavaScriptの処理を実行することができる。
     
     // 第1問  id='q1'の要素の文字色を赤色にせよ。
     $('#q1').css('color','red');
@@ -78,12 +79,15 @@
     $('#q2').click(function() {
       $(this).css('background-color','cadetblue');
     })
+    //clickメソッドでq2をclickした時にbackgroundcolorをcadetblueにする。
 
     // 第3問  id='q3'の要素をクリックしたら2秒かけてフェードアウトさせよ。
     $('#q3').click(fadeOut);
     function fadeOut() {
       $(this).fadeOut(2000);
     }
+
+    //clickメソッドに引数としてfadeOutを指定。関数functionでfadeOutを指定し２秒でfadeOutするように処理を指定する。
 
     // 第4問  id='q4'の要素をクリックしたらこの要素の前後とこの要素内の前後にテキストを挿入せよ。
     $('#q4').click(function(){
@@ -92,6 +96,7 @@
              .before('DOMの前')
              .after('DOMの後');
     });
+    //メソッドチェーン
 
     // 第5問  id='q5'の要素をクリックしたらこの要素にlargeというクラスを付与せよ。
     $('#q5').click(function() {
@@ -112,6 +117,8 @@
         console.log(targetNum);
         alert(targetNum);
       })
+      //findメソッドはセレクタの子孫要素を指定して取り出せる。
+      //childrenメソッドはセレクタの一階層下の子要素のみ取得できる。
 
     // 第8問  id='q8'の要素をhoverしたらlargeというクラスを付与し、hoverが外れたら、クラスを削除せよ。
       $('#q8').hover(function() {

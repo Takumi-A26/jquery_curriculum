@@ -1,13 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
     <title>jQuery</title>
-    <link rel="stylesheet" href="../../common/css/reset.css">
-    <link rel="stylesheet" href="../../common/css/base.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../../common/css/reset.css" />
+    <link rel="stylesheet" href="../../common/css/base.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -17,29 +20,43 @@
         <li>MYPAGE</li>
       </ul>
       <ul class="contents">
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-        <li class="is-hidden">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-        <li class="is-hidden">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        <li>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </li>
+        <li class="is-hidden">
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </li>
+        <li class="is-hidden">
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum.
+        </li>
       </ul>
     </div>
     <script src="../../common/js/jquery.js"></script>
     <script>
-      $(function() {
-        $('.nav li').click(function(){
-          var num = (this).index();
-          $('.contents')
-          $('.nav li').removeClass('');
-
+      $(function () {
+        $(".nav li").click(function () {
+          var num = $(this).index();
+          $(".contents")
+            .find("li")
+            .addClass("is-hidden")
+            .eq(num)
+            .removeClass("is-hidden");
         });
-
-      })
+      });
       // 今回やるのはタブメニューです。
       // navの小要素であるliをクリックして、contents内の小要素であるli要素を表示させる。
       // .index() 要素のindexを取得します。
       // .eq() 引数に応じたindexの要素を指定します。
       // .addClass() クラスを追加します。
       // .removeClass() クラスを削除します。
+      //id'.nav li' clickメソッドで無名関数を入れて変数num=this(.nav li)の.indexでclickしたところが何番目か取得
+      //id'.contents' findメソッド（'li')で'li'の子要素を取得し.addClassメソッド('is-hidden')で'li'の子要素に'is-hidden' classを追加する処理を実行。
+      //id'.contents' findメソッド（'li')で'li'の子要素を取得し.eqメソッド(num)で'.nav li'の番号を取得。removeClassメソッド（'isーhidden')で'li'の子要素に'is-hidden' classを削除する処理を実行。
     </script>
   </body>
 </html>
-
